@@ -1,0 +1,31 @@
+{
+  "description": "CPU temperature and fan sensors are absent. Battery, power profile and frequency data still work, so the bar must degrade to profile/battery and say temperature is unavailable.",
+  "base": "normal",
+  "remove": [
+    "class/hwmon/hwmon0/temp1_input",
+    "class/hwmon/hwmon0/temp2_input",
+    "class/hwmon/hwmon0/temp3_input",
+    "class/hwmon/hwmon0/temp4_input",
+    "class/hwmon/hwmon0/temp5_input",
+    "class/hwmon/hwmon1/temp1_input",
+    "class/hwmon/hwmon2/temp1_input",
+    "class/thermal/thermal_zone0/temp",
+    "class/thermal/thermal_zone1/temp",
+    "class/thermal/thermal_zone2/temp",
+    "class/thermal/thermal_zone3/temp"
+  ],
+  "profile": {
+    "available": true,
+    "active": "balanced",
+    "profiles": ["power-saver", "balanced", "performance"],
+    "readonly_reason": ""
+  },
+  "upower": {
+    "present": true,
+    "state": "Discharging",
+    "percent": 49,
+    "changeRate": 8.4,
+    "onBattery": true
+  },
+  "history_c": []
+}

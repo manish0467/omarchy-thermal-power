@@ -1,0 +1,202 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.manish0467.thermal-power",
+  "name": "Thermal & Power",
+  "version": "0.1.0",
+  "author": "Manish",
+  "license": "MIT",
+  "description": "CPU temperature, throttling evidence, battery power and the active power profile in one Omarchy bar widget, with a detailed panel and a profile switcher.",
+  "repository": "https://github.com/manish0467/omarchy-thermal-power",
+  "homepage": "https://github.com/manish0467/omarchy-thermal-power",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "barWidget": {
+    "displayName": "Thermal & Power",
+    "description": "CPU temperature, throttling state, battery watts and the active power profile",
+    "category": "Hardware",
+    "aliases": [
+      "thermal",
+      "temperature",
+      "power",
+      "battery"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "barFields": [
+        "temp",
+        "power"
+      ],
+      "warmThreshold": 80,
+      "hotThreshold": 90,
+      "unit": "c",
+      "pollClosedSeconds": 10,
+      "pollOpenSeconds": 2,
+      "historyMinutes": 5,
+      "notifyTemp": false,
+      "notifyTempC": 92,
+      "notifyTempSeconds": 90,
+      "notifyPower": false,
+      "notifyPowerW": 30,
+      "notifyPowerSeconds": 60,
+      "notifyCooldownMinutes": 15,
+      "mockScenario": ""
+    },
+    "schema": [
+      {
+        "key": "barFields",
+        "type": "multiselect",
+        "label": "Bar fields",
+        "description": "Choose what the compact bar label shows. The panel always shows every field.",
+        "defaultValue": [
+          "temp",
+          "power"
+        ],
+        "noSelectionText": "Temperature and power",
+        "options": [
+          {
+            "value": "temp",
+            "label": "CPU temperature"
+          },
+          {
+            "value": "power",
+            "label": "Battery watts / AC"
+          },
+          {
+            "value": "profile",
+            "label": "Power profile glyph"
+          }
+        ]
+      },
+      {
+        "key": "warmThreshold",
+        "type": "integer",
+        "label": "Warm threshold (C)",
+        "description": "Temperature at which the widget turns amber. Starting point, not a hardware limit.",
+        "min": 30,
+        "max": 105,
+        "step": 1,
+        "defaultValue": 80
+      },
+      {
+        "key": "hotThreshold",
+        "type": "integer",
+        "label": "Hot threshold (C)",
+        "description": "Temperature at which the widget turns urgent red. Starting point, not a hardware limit.",
+        "min": 31,
+        "max": 110,
+        "step": 1,
+        "defaultValue": 90
+      },
+      {
+        "key": "unit",
+        "type": "enum",
+        "label": "Temperature unit",
+        "options": [
+          "c",
+          "f"
+        ],
+        "defaultValue": "c",
+        "description": "Display unit. Thresholds are always configured in Celsius."
+      },
+      {
+        "key": "pollClosedSeconds",
+        "type": "integer",
+        "label": "Poll interval, panel closed (seconds)",
+        "min": 3,
+        "max": 120,
+        "step": 1,
+        "defaultValue": 10
+      },
+      {
+        "key": "pollOpenSeconds",
+        "type": "integer",
+        "label": "Poll interval, panel open (seconds)",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "defaultValue": 2
+      },
+      {
+        "key": "historyMinutes",
+        "type": "integer",
+        "label": "In-memory history (minutes)",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "defaultValue": 5,
+        "description": "Sparkline history is kept in memory only and is lost when the shell restarts."
+      },
+      {
+        "key": "notifyTemp",
+        "type": "boolean",
+        "label": "Notify on sustained high temperature",
+        "description": "Off by default. Sends a normal-urgency Omarchy notification after the temperature stays above the threshold.",
+        "defaultValue": false
+      },
+      {
+        "key": "notifyTempC",
+        "type": "integer",
+        "label": "Temperature notification threshold (C)",
+        "min": 40,
+        "max": 110,
+        "step": 1,
+        "defaultValue": 92
+      },
+      {
+        "key": "notifyTempSeconds",
+        "type": "integer",
+        "label": "Temperature sustain time (seconds)",
+        "min": 10,
+        "max": 3600,
+        "step": 10,
+        "defaultValue": 90
+      },
+      {
+        "key": "notifyPower",
+        "type": "boolean",
+        "label": "Notify on high battery draw",
+        "description": "Off by default. Only fires while discharging; charging input is ignored.",
+        "defaultValue": false
+      },
+      {
+        "key": "notifyPowerW",
+        "type": "integer",
+        "label": "Battery draw notification threshold (W)",
+        "min": 1,
+        "max": 250,
+        "step": 1,
+        "defaultValue": 30
+      },
+      {
+        "key": "notifyPowerSeconds",
+        "type": "integer",
+        "label": "Battery draw sustain time (seconds)",
+        "min": 10,
+        "max": 3600,
+        "step": 10,
+        "defaultValue": 60
+      },
+      {
+        "key": "notifyCooldownMinutes",
+        "type": "integer",
+        "label": "Notification cooldown (minutes)",
+        "min": 1,
+        "max": 240,
+        "step": 1,
+        "defaultValue": 15
+      },
+      {
+        "key": "mockScenario",
+        "type": "string",
+        "label": "Preview fixture (development only)",
+        "description": "Empty for real sensors. A name such as normal, warm, hot, throttling, no-battery, no-sensors, profile-daemon-missing, on-ac-charging or preview loads mock/<name>/scenario.json instead of sysfs.",
+        "defaultValue": ""
+      }
+    ]
+  }
+}

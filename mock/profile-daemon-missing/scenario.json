@@ -1,0 +1,18 @@
+{
+  "description": "Temperature and battery work, but power-profiles-daemon is unavailable. Profile controls must be read-only with a reason.",
+  "base": "normal",
+  "profile": {
+    "available": false,
+    "active": "",
+    "profiles": [],
+    "readonly_reason": "power-profiles-daemon is not running"
+  },
+  "upower": {
+    "present": true,
+    "state": "Discharging",
+    "percent": 60,
+    "changeRate": 10.1,
+    "onBattery": true
+  },
+  "history_c": [45, 46, 46, 47, 46, 45, 46, 47, 46, 46, 47, 48, 47, 46, 45, 46, 47, 46, 46, 45]
+}

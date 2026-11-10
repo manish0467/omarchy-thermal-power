@@ -1,0 +1,33 @@
+{
+  "description": "Hot CPU with active Processor cooling states and non-zero thermal_throttle counters. The mock delta seeds the recent-event list once per visit.",
+  "base": "hot",
+  "files": {
+    "class/thermal/cooling_device0/cur_state": "3",
+    "class/thermal/cooling_device1/cur_state": "2",
+    "class/thermal/cooling_device2/cur_state": "1",
+    "devices/system/cpu/cpu0/thermal_throttle/core_throttle_count": "14",
+    "devices/system/cpu/cpu0/thermal_throttle/package_throttle_count": "4",
+    "devices/system/cpu/cpu0/thermal_throttle/core_throttle_total_time_ms": "820",
+    "devices/system/cpu/cpu0/thermal_throttle/package_throttle_total_time_ms": "610",
+    "devices/system/cpu/cpu0/thermal_throttle/core_throttle_max_time_ms": "45",
+    "devices/system/cpu/cpu0/thermal_throttle/package_throttle_max_time_ms": "33",
+    "devices/system/cpu/cpu1/thermal_throttle/core_throttle_count": "12",
+    "devices/system/cpu/cpu1/thermal_throttle/package_throttle_count": "4",
+    "devices/system/cpu/cpu1/thermal_throttle/core_throttle_total_time_ms": "760",
+    "devices/system/cpu/cpu1/thermal_throttle/package_throttle_total_time_ms": "610",
+    "devices/system/cpu/cpu1/thermal_throttle/core_throttle_max_time_ms": "41",
+    "devices/system/cpu/cpu1/thermal_throttle/package_throttle_max_time_ms": "33"
+  },
+  "throttle_delta": {
+    "core": 1,
+    "package": 1,
+    "total_ms": 250
+  },
+  "upower": {
+    "present": true,
+    "state": "Discharging",
+    "percent": 51,
+    "changeRate": 14.8,
+    "onBattery": true
+  }
+}

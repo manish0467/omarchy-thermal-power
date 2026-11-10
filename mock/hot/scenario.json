@@ -1,0 +1,24 @@
+{
+  "description": "Sustained load: CPU package at 93 C, above the 90 C hot threshold. The fixture deliberately has no throttle counter increment and no active cooling device.",
+  "base": "normal",
+  "files": {
+    "class/hwmon/hwmon0/temp1_input": "93000",
+    "class/hwmon/hwmon0/temp2_input": "91000",
+    "class/hwmon/hwmon0/temp3_input": "92500",
+    "class/hwmon/hwmon0/temp4_input": "91500",
+    "class/hwmon/hwmon0/temp5_input": "93500",
+    "class/hwmon/hwmon2/temp1_input": "89000",
+    "class/thermal/thermal_zone0/temp": "89000",
+    "class/thermal/thermal_zone1/temp": "93000",
+    "class/thermal/thermal_zone2/temp": "91000",
+    "class/thermal/thermal_zone3/temp": "88000"
+  },
+  "upower": {
+    "present": true,
+    "state": "Discharging",
+    "percent": 54,
+    "changeRate": 13.6,
+    "onBattery": true
+  },
+  "history_c": [58, 63, 68, 73, 77, 81, 84, 86, 88, 89, 90, 91, 92, 93, 94, 93, 92, 93, 94, 93]
+}

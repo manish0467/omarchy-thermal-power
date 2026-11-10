@@ -1,0 +1,22 @@
+{
+  "description": "Screenshot fixture: normal state, package 48 C, 11.4 W discharging, balanced profile. All values are fictional and loaded from this directory; no sysfs or D-Bus profile data is used.",
+  "base": "normal",
+  "files": {
+    "class/hwmon/hwmon0/temp1_input": "48000",
+    "class/hwmon/hwmon0/temp2_input": "47000",
+    "class/hwmon/hwmon0/temp3_input": "48000",
+    "class/hwmon/hwmon0/temp4_input": "47000",
+    "class/hwmon/hwmon0/temp5_input": "49000",
+    "class/thermal/thermal_zone1/temp": "48000",
+    "class/power_supply/BAT0/capacity": "68",
+    "class/power_supply/BAT0/energy_now": "23500000"
+  },
+  "upower": {
+    "present": true,
+    "state": "Discharging",
+    "percent": 68,
+    "changeRate": 11.4,
+    "onBattery": true
+  },
+  "history_c": [42, 43, 42, 43, 44, 44, 45, 45, 46, 46, 45, 46, 47, 47, 48, 47, 46, 47, 48, 48, 47, 48, 49, 48, 47, 48, 48, 49, 48, 47, 48, 49, 48, 48, 47, 48, 49, 48, 48, 48]
+}

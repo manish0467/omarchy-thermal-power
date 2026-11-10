@@ -1,0 +1,27 @@
+{
+  "description": "Desktop or battery-less run: no BAT0, AC online. Temperature and profile still work.",
+  "base": "normal",
+  "remove": [
+    "class/power_supply/BAT0/type",
+    "class/power_supply/BAT0/present",
+    "class/power_supply/BAT0/scope",
+    "class/power_supply/BAT0/status",
+    "class/power_supply/BAT0/capacity",
+    "class/power_supply/BAT0/energy_now",
+    "class/power_supply/BAT0/energy_full",
+    "class/power_supply/BAT0/voltage_now",
+    "class/power_supply/BAT0/cycle_count",
+    "class/power_supply/BAT0/power_now"
+  ],
+  "files": {
+    "class/power_supply/ADP1/online": "1"
+  },
+  "upower": {
+    "present": false,
+    "state": "Unknown",
+    "percent": null,
+    "changeRate": null,
+    "onBattery": false
+  },
+  "history_c": [41, 42, 42, 43, 42, 43, 44, 43, 42, 43, 44, 44, 43, 42, 43, 44, 43, 42, 43, 43]
+}

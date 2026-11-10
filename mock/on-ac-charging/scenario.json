@@ -1,0 +1,18 @@
+{
+  "description": "Plugged in and charging. UPower's 24.4 W changeRate is charger input, not battery consumption; the bar shows an up arrow and the high-draw notification must stay silent.",
+  "base": "normal",
+  "files": {
+    "class/power_supply/ADP1/online": "1",
+    "class/power_supply/BAT0/status": "Charging",
+    "class/power_supply/BAT0/capacity": "75",
+    "class/power_supply/BAT0/energy_now": "25800000"
+  },
+  "upower": {
+    "present": true,
+    "state": "Charging",
+    "percent": 75,
+    "changeRate": 24.4,
+    "onBattery": false
+  },
+  "history_c": [46, 47, 47, 48, 48, 49, 48, 47, 48, 49, 49, 48, 47, 48, 49, 48, 48, 47, 48, 48]
+}
